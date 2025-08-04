@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Copy & Paste Loaf Rating Format</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background-color: #f8f8f8;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            max-width: 700px;
+            margin: auto;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+        }
+        textarea {
+            width: 100%;
+            height: 200px;
+            padding: 10px;
+            font-size: 1rem;
+            font-family: monospace;
+        }
+        button {
+            margin-top: 15px;
+            padding: 10px 20px;
+            font-size: 1rem;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Copy & Paste Loaf Rating Format</h1>
+        <p>Click the button below to copy a format for rating loaves in the comments!</p>
+        <textarea id="loafText" readonly>
+Loaf Form Evaluation:
+* 🧱 Structure (1–10):
+* 📐 Geometry & Symmetry (1–10):
+* 🧶 Texture & Density (1–5):
+* 🕊️ Energy (1–5):
+—
+**Total** ( __ /30):
+__
+Comments:
+        </textarea>
+        <button onclick="copyToClipboard()">Copy to Clipboard</button>
+    </div>
+    <script>
+        function copyToClipboard() {
+            var copyText = document.getElementById("loafText");
+            copyText.select();
+            copyText.setSelectionRange(0, 99999); // For mobile devices
+            document.execCommand("copy");
+            alert("Loaf rating format copied to clipboard!");
+        }
+    </script>
+</body>
+</html>
